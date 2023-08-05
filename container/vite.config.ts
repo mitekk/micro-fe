@@ -5,15 +5,10 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import federation from '@originjs/vite-plugin-federation'
 
-const APPLICATION_PORT = 8081
+const APPLICATION_PORT = 8080
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  build: {
-    minify: false,
-    cssCodeSplit: false,
-    target: 'esnext'
-  },
   server: {
     port: APPLICATION_PORT
   },
@@ -24,10 +19,9 @@ export default defineConfig({
     vue(),
     vueJsx(),
     federation({
-      name: 'vue-app',
-      filename: 'vueApp.js',
-      exposes: {
-        './App': './src/App.vue'
+      name: 'container-app',
+      remotes: {
+        vue_app: 'http://localhost:8081/assets/vueApp.js'
       },
       shared: ['vue']
     })
