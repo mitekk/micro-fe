@@ -8,8 +8,8 @@ This is a proof of concept with Vue3, to show one of many ways to design a micro
 
 In this project there are the following folders:
 
-- `pigeon`: vue host project
-- `pigeon-shipments`: vue remote project
+- `container`: vue host project
+- `vue-app`: vue remote project
 
 ## Recommended IDE Setup
 
