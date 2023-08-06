@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/vue-app',
       name: 'vue',
       component: () => import('vue_app/App')
+    },
+    {
+      path: '/react-app',
+      name: 'react',
+      component: () => import('react_app/App')
     }
   ]
 })

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "run-s build preview",
-    "build": "pnpm --parallel --filter=\"!./container\" --filter=\"!./vue-app\" build",
+    "build": "pnpm --parallel --filter=\"!./container\" build",
     "preview": "run-p serve-remotes serve-host",
     "serve-remotes": "pnpm --parallel --filter=\"!./container\" preview",
     "serve-host": "pnpm --parallel --filter=\"./container\" dev",

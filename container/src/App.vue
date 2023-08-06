@@ -10,6 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/vue-app">Vue</RouterLink>
+        <RouterLink to="/react-app">React</RouterLink>
       </nav>
     </div>
   </header>

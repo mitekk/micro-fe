@@ -9,6 +9,12 @@ const APPLICATION_PORT = 8080
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    modulePreload: false,
+    minify: false,
+    cssCodeSplit: false,
+    target: 'esnext'
+  },
   server: {
     port: APPLICATION_PORT
   },
@@ -21,7 +27,8 @@ export default defineConfig({
     federation({
       name: 'container-app',
       remotes: {
-        vue_app: 'http://localhost:8081/assets/vueApp.js'
+        vue_app: 'http://localhost:8081/assets/vueApp.js',
+        react_app: 'http://localhost:8082/assets/reactApp.js'
       },
       shared: ['vue']
     })
@@ -30,5 +37,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom']
   }
 })

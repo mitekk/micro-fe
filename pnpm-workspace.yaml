@@ -1,3 +1,4 @@
 packages:
   - "container"
   - "vue-app"
+  - "react-app"
